@@ -176,24 +176,27 @@ public class UndirectedWeightedGraph
         // 1. initilize all the things 
         pathList = new List<Node>();
 
-        // pred[] => node name to its predecessor node
-        Dictionary<string, Node> pred = new Dictionary<string, Node>();
-        // add every node name to the dictionary with a null pred.
-        foreach (var node in Nodes)
-        {
-            pred[node.Name] = null;
-        }
+        // REUSE CODE HERE
 
-        // dist[] => node name to distance from the source node
-        Dictionary<string, int> dist = new Dictionary<string, int>();
-        // setup all distances to infinity
-        foreach (var node in Nodes)
-        {
-            dist[node.Name] = int.MaxValue;
-        }
+
+        // // pred[] => node name to its predecessor node
+        // Dictionary<string, Node> pred = new Dictionary<string, Node>();
+        // // add every node name to the dictionary with a null pred.
+        // foreach (var node in Nodes)
+        // {
+        //     pred[node.Name] = null;
+        // }
+
+        // // dist[] => node name to distance from the source node
+        // Dictionary<string, int> dist = new Dictionary<string, int>();
+        // // setup all distances to infinity
+        // foreach (var node in Nodes)
+        // {
+        //     dist[node.Name] = int.MaxValue;
+        // }
 
         // initialize all colors to white
-
+        
         var node1 = FindNode(node1name);
         var node2 = FindNode(node2name);
 
