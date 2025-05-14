@@ -177,17 +177,17 @@ public class UndirectedWeightedGraph
         pathList = new List<Node>();
 
         // REUSE CODE HERE
-
+        UndirectedUnweightedGraph.DFS();
 
         // // pred[] => node name to its predecessor node
         // Dictionary<string, Node> pred = new Dictionary<string, Node>();
-        // // add every node name to the dictionary with a null pred.
+        // add every node name to the dictionary with a null pred.
         // foreach (var node in Nodes)
         // {
         //     pred[node.Name] = null;
         // }
 
-        // // dist[] => node name to distance from the source node
+        // dist[] => node name to distance from the source node
         // Dictionary<string, int> dist = new Dictionary<string, int>();
         // // setup all distances to infinity
         // foreach (var node in Nodes)
@@ -195,13 +195,13 @@ public class UndirectedWeightedGraph
         //     dist[node.Name] = int.MaxValue;
         // }
 
-        // initialize all colors to white
+        // // initialize all colors to white
         
-        var node1 = FindNode(node1name);
-        var node2 = FindNode(node2name);
+        // var node1 = FindNode(node1name);
+        // var node2 = FindNode(node2name);
 
-        // 2. Do all the path finding computation/generation
-        DFSVisit(node1, node2, pred);
+        // // 2. Do all the path finding computation/generation
+        // DFSVisit(node1, node2, pred);
 
         // 3. Post-process the data structures and convert them to the right format.
 
@@ -315,7 +315,7 @@ public class UndirectedWeightedGraph
     /// <param name="node2name">The ending node's name</param>
     /// <param name="pathList">A list of the nodes in the path from the starting node to the ending node</param>
     /// <returns>The total cost of the weights in the path</returns>
-    public int BFSPathBetween(string node1, string node2, out List<Node> pathList)
+    public int BFSPathBetween(string node1name, string node2name, out List<Node> pathList)
     {
         pathList = new List<Node>();
 
