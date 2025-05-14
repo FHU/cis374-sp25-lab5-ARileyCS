@@ -177,8 +177,21 @@ public class UndirectedWeightedGraph
         pathList = new List<Node>();
 
         // REUSE CODE HERE
-        UndirectedUnweightedGraph.DFS();
+        Dictionary<Node, Node> dfs = DFS(GetNodeByName(node1name));
 
+        // follow the values from the node2 to node1, adding the values as you go
+        Node pred = dfs[GetNodeByName(node2name)];
+        while (pred != null)
+        {
+            pathList.Add(pred);
+            pred = dfs[pred];
+        }
+
+        int pathValue = 0;
+        // foreach (Node node in pathList)
+        // {
+        //     pathValue += 
+        // }
         // // pred[] => node name to its predecessor node
         // Dictionary<string, Node> pred = new Dictionary<string, Node>();
         // add every node name to the dictionary with a null pred.
